@@ -1,0 +1,23 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-overons {
+	&__dienst {
+		display: flex;
+		justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin: 3rem 0;
+	}
+
+	&__imgcontainer {
+		width: 5rem;
+		height: auto;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
+}
