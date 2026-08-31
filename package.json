@@ -1,0 +1,19 @@
+{
+  "name": "vite-project",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.103.1",
+    "vite": "^8.0.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.27",
+    "bootstrap": "^5.3.8"
+  }
+}
