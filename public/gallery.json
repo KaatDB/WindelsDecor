@@ -1,3 +1,53 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "title": "Appartement",
+      "folder": "gallery/Appartement",
+      "cover": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427987/7.jpg",
+      "images": [
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427987/7.jpg",
+          "width": 1440,
+          "height": 1918,
+          "publicId": "7"
+        },
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427986/6.jpg",
+          "width": 1440,
+          "height": 1918,
+          "publicId": "6"
+        },
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427984/5.jpg",
+          "width": 1440,
+          "height": 1920,
+          "publicId": "5"
+        },
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427983/4.jpg",
+          "width": 1440,
+          "height": 1918,
+          "publicId": "4"
+        },
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427981/3.jpg",
+          "width": 640,
+          "height": 853,
+          "publicId": "3"
+        },
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788427980/2.jpg",
+          "width": 640,
+          "height": 852,
+          "publicId": "2"
+        },
+        {
+          "url": "https://res.cloudinary.com/myrspl8b/image/upload/v1788426922/1.jpg",
+          "width": 1440,
+          "height": 1918,
+          "publicId": "1"
+        }
+      ]
+    }
+  ]
 }
