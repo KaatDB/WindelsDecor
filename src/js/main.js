@@ -1,8 +1,8 @@
 // Import our custom CSS
 import '../scss/styles.scss';
 
-// Impoty own JS
-import './projects.js'
+// Import own JS
+import './gallery.js'
 
 // Import all of Bootstrap’s JS
 import * as bootstrap from 'bootstrap';

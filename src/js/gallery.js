@@ -1,4 +1,4 @@
-import '..scss/_components-gallery.scss';
+import '../scss/_components-gallery.scss';
 
 const GALLERY_JSON_PATH = '/gallery.json';
 
