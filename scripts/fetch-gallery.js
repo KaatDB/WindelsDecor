@@ -44,8 +44,11 @@ async function main() {
 
   for (const folder of folders) {
     // 2. List all images inside each project subfolder
+    // Uses the asset-folder-based lookup, which is required for accounts using
+    // Cloudinary's "dynamic folder mode" (the default for newer accounts).
+    // Prefix-based search (the old approach) only works in legacy "fixed folder mode".
     const { resources } = await cloudinaryFetch(
-      `/resources/image?type=upload&prefix=${encodeURIComponent(folder.path)}/&max_results=100`
+      `/resources/by_asset_folder?asset_folder=${encodeURIComponent(folder.path)}&max_results=100`
     );
 
     const images = resources.map((r) => ({
