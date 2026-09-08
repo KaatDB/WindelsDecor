@@ -16,66 +16,62 @@ const BASE_URL = 'https://api.cloudinary.com/v1_1';
 const ROOT_FOLDER = 'gallery'; // change if you use a different root folder name
 
 async function cloudinaryFetch(path) {
-  const res = await fetch(`${BASE_URL}/${CLOUD_NAME}${path}`, {
-    headers: { Authorization: `Basic ${AUTH}` },
-  });
-  if (!res.ok) {
-    throw new Error(`Cloudinary API error ${res.status}: ${await res.text()}`);
-  }
-  return res.json();
+	const res = await fetch(`${BASE_URL}/${CLOUD_NAME}${path}`, {
+		headers: { Authorization: `Basic ${AUTH}` },
+	});
+	if (!res.ok) {
+		throw new Error(`Cloudinary API error ${res.status}: ${await res.text()}`);
+	}
+	return res.json();
 }
 
 function toTitle(folderName) {
-  // "old-harbour-series" -> "Old Harbour Series"
-  return folderName
-    .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+	// "old-harbour-series" -> "Old Harbour Series"
+	return folderName.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 async function main() {
-  if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
-    throw new Error('Missing Cloudinary credentials in environment variables.');
-  }
+	if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
+		throw new Error('Missing Cloudinary credentials in environment variables.');
+	}
 
-  // 1. List all subfolders inside the root gallery folder
-  const { folders } = await cloudinaryFetch(`/folders/${ROOT_FOLDER}`);
+	// 1. List all subfolders inside the root gallery folder
+	const { folders } = await cloudinaryFetch(`/folders/${ROOT_FOLDER}`);
 
-  const projects = [];
+	const projects = [];
 
-  for (const folder of folders) {
-    // 2. List all images inside each project subfolder
-    // Uses the asset-folder-based lookup, which is required for accounts using
-    // Cloudinary's "dynamic folder mode" (the default for newer accounts).
-    // Prefix-based search (the old approach) only works in legacy "fixed folder mode".
-    const { resources } = await cloudinaryFetch(
-      `/resources/by_asset_folder?asset_folder=${encodeURIComponent(folder.path)}&max_results=100`
-    );
+	for (const folder of folders) {
+		// 2. List all images inside each project subfolder
+		// Uses the asset-folder-based lookup, which is required for accounts using
+		// Cloudinary's "dynamic folder mode" (the default for newer accounts).
+		// Prefix-based search (the old approach) only works in legacy "fixed folder mode".
+		const { resources } = await cloudinaryFetch(`/resources/by_asset_folder?asset_folder=${encodeURIComponent(folder.path)}&max_results=100`);
 
-    const images = resources.map((r) => ({
-      url: r.secure_url,
-      width: r.width,
-      height: r.height,
-      publicId: r.public_id,
-    }));
+		const images = resources.map((r) => ({
+			url: r.secure_url.replace('/upload/', '/upload/f_auto,q_auto/'),
+			width: r.width,
+			height: r.height,
+			publicId: r.public_id,
+		}));
 
-    if (images.length === 0) continue; // skip empty folders
+		if (images.length === 0) continue; // skip empty folders
 
-    projects.push({
-      title: toTitle(folder.name),
-      folder: folder.path,
-      cover: images[0].url,
-      images,
-    });
-  }
+		projects.push({
+			title: toTitle(folder.name),
+			folder: folder.path,
+			cover: images[0].url,
+			images,
+		});
+	}
 
-  const fs = await import('node:fs/promises');
-  await fs.mkdir('public', { recursive: true });
-  await fs.writeFile('public/gallery.json', JSON.stringify({ projects }, null, 2));
+	const fs = await import('node:fs/promises');
+	await fs.mkdir('public', { recursive: true });
+	await fs.writeFile('public/gallery.json', JSON.stringify({ projects }, null, 2));
 
-  console.log(`Wrote ${projects.length} project(s) to public/gallery.json`);
+	console.log(`Wrote ${projects.length} project(s) to public/gallery.json`);
 }
 
 main().catch((err) => {
-  console.error(err);
-  process.exit(1);
+	console.error(err);
+	process.exit(1);
 });
