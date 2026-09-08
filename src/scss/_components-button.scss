@@ -1,0 +1,13 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-btn {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
