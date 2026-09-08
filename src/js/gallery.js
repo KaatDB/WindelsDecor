@@ -1,5 +1,8 @@
 import '../scss/_components-gallery.scss';
 
+// import.meta.env.BASE_URL automatically resolves to Vite's configured `base`
+// (e.g. '/WindelsDecor/'), so this works correctly both in dev and once
+// deployed to GitHub Pages under a repo subpath.
 const GALLERY_JSON_PATH = `${import.meta.env.BASE_URL}gallery.json`;
 
 async function loadGallery() {
@@ -19,22 +22,78 @@ async function loadGallery() {
 function renderGallery(container, projects) {
 	container.innerHTML = '';
 
+	const allImages = [];
 	projects.forEach((project) => {
-		// Use each project's cover image as the grid tile.
-		// (Swap `project.cover` for `project.images[0].url` etc. if you want
-		// a different image per tile, or loop project.images to show every
-		// image individually instead of one tile per project.)
-		const tile = document.createElement('a');
+		project.images.forEach((image) => {
+			allImages.push({ url: image.url, title: project.title });
+		});
+	});
+
+	allImages.forEach((image, index) => {
+		const tile = document.createElement('button');
+		tile.type = 'button';
 		tile.className = 'gallery-tile';
-		tile.href = `#${project.folder}`; // hook up to a lightbox/detail view later if wanted
 
 		tile.innerHTML = `
-      <img src="${project.cover}" alt="${project.title}" loading="lazy" />
-      <span class="gallery-tile__title">${project.title}</span>
+      <img src="${image.url}" alt="${image.title}" loading="lazy" />
+      <span class="gallery-tile__title">${image.title}</span>
     `;
 
+		tile.addEventListener('click', () => openLightbox(allImages, index));
 		container.appendChild(tile);
 	});
+}
+
+function openLightbox(images, startIndex) {
+	let currentIndex = startIndex;
+
+	const overlay = document.createElement('div');
+	overlay.className = 'lightbox-overlay';
+	overlay.innerHTML = `
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+    <img class="lightbox-image" src="" alt="" />
+    <span class="lightbox-title"></span>
+    <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+  `;
+	document.body.appendChild(overlay);
+	document.body.style.overflow = 'hidden'; // prevent background scroll while open
+
+	const imgEl = overlay.querySelector('.lightbox-image');
+	const titleEl = overlay.querySelector('.lightbox-title');
+
+	function show(index) {
+		currentIndex = (index + images.length) % images.length; // wrap around
+		const image = images[currentIndex];
+		imgEl.src = image.url;
+		imgEl.alt = image.title;
+		titleEl.textContent = image.title;
+	}
+
+	function close() {
+		document.body.style.overflow = '';
+		document.removeEventListener('keydown', onKeydown);
+		overlay.remove();
+	}
+
+	function onKeydown(e) {
+		if (e.key === 'Escape') close();
+		if (e.key === 'ArrowRight') show(currentIndex + 1);
+		if (e.key === 'ArrowLeft') show(currentIndex - 1);
+	}
+
+	overlay.querySelector('.lightbox-close').addEventListener('click', close);
+	overlay.querySelector('.lightbox-prev').addEventListener('click', () => show(currentIndex - 1));
+	overlay.querySelector('.lightbox-next').addEventListener('click', () => show(currentIndex + 1));
+
+	// Click on the dark backdrop (but not the image itself) also closes it
+	overlay.addEventListener('click', (e) => {
+		if (e.target === overlay) close();
+	});
+
+	document.addEventListener('keydown', onKeydown);
+
+	show(startIndex);
 }
 
 loadGallery();
