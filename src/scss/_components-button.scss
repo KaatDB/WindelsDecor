@@ -6,8 +6,9 @@
     color: white;
     transition: all 0.3s ease;
 
-    &:hover {
-        background-color: white;
-        color: black;
+    &:hover, &:active, &:checked {
+        background-color: #BFB4A5 !important;
+        color: black !important;
+        border: none !important;
     }
 }
