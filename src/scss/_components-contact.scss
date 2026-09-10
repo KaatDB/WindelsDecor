@@ -1,0 +1,30 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-contact {
+	&__inputfield {
+		&:hover {
+			.c-contact__input {
+				border-bottom: 3px solid black;
+			}
+		}
+	}
+
+	&__input {
+		border-bottom: 2px solid black;
+
+		&:focus {
+			border-bottom: 3px solid black;
+		}
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			-webkit-box-shadow: 0 0 0 30px $background-color inset !important;
+			box-shadow: 0 0 0 30px $background-color inset !important;
+			-webkit-text-fill-color: #000000 !important;
+			transition: background-color 5000s ease-in-out 0s;
+		}
+	}
+}

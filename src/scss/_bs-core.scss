@@ -1,9 +1,22 @@
-@use "settings" as *;
-@import "bootstrap/scss/functions";
+@use 'settings' as *;
+@import 'bootstrap/scss/functions';
 
 // Hier moet je de bootstrap scss variabelen overschrijven
+$input-bg: $background-color;
+$input-border-radius: 0;
+$input-border-color: $background-color;
+$input-border-width: 0;
+$input-box-shadow: none;
+$input-focus-bg: $background-color;
+$input-focus-border-color: none;
+$input-focus-color: none;
+$input-focus-width: 0;
+$input-focus-box-shadow: none;
 
+.form-floating > label {
+	color: black !important;
+}
 
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';

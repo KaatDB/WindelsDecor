@@ -2,13 +2,19 @@
 @use 'bs-core' as *;
 
 .c-overons {
-		&__dienst {
+	&__img {
+		width: 100%;
+		height: auto;
+		border-radius: .625rem;
+	}
+
+	&__dienst {
 		display: flex;
 		justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        margin: 3rem 0;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		margin: 3rem 0;
 	}
 
 	&__imgcontainer {
