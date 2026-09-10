@@ -28,3 +28,15 @@
 		}
 	}
 }
+
+.was-validated {
+	.c-contact__inputfield:hover {
+		.c-contact__input {
+			border-bottom: 2px solid var(--bs-form-valid-border-color);
+		}
+	}
+
+    .c-contact__input:focus {
+        border-bottom: 2px solid var(--bs-form-valid-border-color);
+    }
+}

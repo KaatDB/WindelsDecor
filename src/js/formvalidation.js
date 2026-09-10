@@ -8,7 +8,6 @@ const validateForm = () => {
 		e.preventDefault();
 		if (form.checkValidity()) {
 			form.classList.add('u-hide');
-			document.querySelector('.js-submit-animation').classList.remove('u-hide');
 			eraseCookie('contactForm');
 		}
 		form.classList.add('was-validated');

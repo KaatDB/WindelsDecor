@@ -135,7 +135,7 @@
         </div>
         <div class="row">
           <div class="col-7">
-            <form class="js-validate">
+            <form class="js-validate" action="#">
               <div class="form-floating c-contact__inputfield mb-3">
                 <input type="text" class="form-control c-contact__input" name="voornaam" id="voornaam" minlength="2" placeholder="Elias" required>
                 <label class="c-contact__label" for="voornaam">Voornaam</label>
@@ -169,8 +169,42 @@
     </section>
   </main>
 
-  <footer>
-
+  <footer class="c-footer">
+    <div class="container">
+      <div class="row c-footer__line">
+        <div class="col-4 d-flex flex-column gap-3">
+          <img class="c-footer__logo" src="Logo_WindelsDecor.svg" width="300" height="109">
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex gap-1">
+              <i class="bi bi-envelope-at c-footer__icon"></i>
+              <a class="c-footer__link" href="mailto:info@windelsdecor.be">info@windelsdecor.be</a>
+            </div>
+            <div class="d-flex gap-1">
+              <i class="bi bi-telephone c-footer__icon"></i>
+              <a class="c-footer__link" href="tel:0470120718">0470 12 07 18</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="d-flex flex-column justify-content-end align-items-center h-100 gap-2">
+            <a class="c-footer__link" href="#overons">Over ons</a>
+            <a class="c-footer__link" href="#realisaties">Realisaties</a>
+            <a class="c-footer__link" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="col-4 d-flex align-items-end justify-content-end">
+          <a class="btn c-btn" href="mailto:info@windelsdecor.be">Vraag uw offerte aan</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="c-footer__disclaimer d-flex justify-content-between">
+            <p>&copy; Windels Decor</p>
+            <p>BTW&dash;nummer&colon;&nbsp;BE1032005566</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script type="module" src="js/main.js"></script>
