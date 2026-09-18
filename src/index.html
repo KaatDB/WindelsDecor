@@ -135,35 +135,69 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-7">
+          <div class="col-lg-7">
             <form class="js-validate" action="#">
-              <div class="form-floating c-contact__inputfield mb-3">
+              <div class="form-floating c-contact__inputfield mb-4">
                 <input type="text" class="form-control c-contact__input" name="voornaam" id="voornaam" minlength="2" placeholder="Elias" required>
                 <label class="c-contact__label" for="voornaam">Voornaam</label>
                 <div class="invalid-feedback">Gelieve je voornaam in te vullen.</div>
               </div>
-              <div class="form-floating c-contact__inputfield mb-3">
+              <div class="form-floating c-contact__inputfield mb-4">
                 <input type="text" class="form-control c-contact__input" name="naam" id="naam" minlength="2" placeholder="Windels" required>
                 <label class="c-contact__label" for="naam">Naam</label>
                 <div class="invalid-feedback">Gelieve je naam in te vullen.</div>
               </div>
-              <div class="form-floating c-contact__inputfield mb-3">
+              <div class="form-floating c-contact__inputfield mb-4">
                 <input type="mail" class="form-control c-contact__input" name="mail" id="mail" minlength="2" placeholder="info@windelsdecor.be" required>
                 <label class="c-contact__label" for="mail">E-mailadres</label>
                 <div class="invalid-feedback">Gelieve een geldig e-mailadres in te vullen.</div>
               </div>
-              <div class="form-floating c-contact__inputfield mb-3">
+              <div class="form-floating c-contact__inputfield mb-4">
                 <input type="tel" class="form-control c-contact__input" name="telefoonnummer" id="telefoonnummer" minlength="2" placeholder="0470 12 07 18" required>
                 <label class="c-contact__label" for="telefoonnummer">Telefoonnummer</label>
                 <div class="invalid-feedback">Gelieve een geldig telefoonnummer in te vullen.</div>
               </div>
-              <div class="form-floating c-contact__inputfield mb-3">
+              <div class="form-floating c-contact__inputfield mb-4">
                 <textarea rows="4" class="form-control c-contact__input" name="bericht" id="bericht" placeholder="Hoe kunnen we je helpen?"></textarea>
                 <label class="form-label c-contact__label" for="bericht">Bericht</label>
                 <div class="invalid-feedback">Gelieve je bericht in te vullen.</div>
               </div>
               <button type="submit" class="w-100 btn c-btn js-submit-btn">Verzend je bericht</button>
             </form>
+          </div>
+          <div class="col-lg-5">
+            <div class="c-contact__info d-flex flex-column justify-content-evenly mt-5 mt-lg-0">
+              <div class="c-contact__links">
+                <div class="d-flex gap-4 align-items-center p-4">
+                  <i class="bi bi-envelope-at c-contact__icon"></i>
+                  <div class="d-flex flex-column gap-1">
+                    <h4 class="p-0 m-0">E&dash;mail</h4>
+                    <a class="c-contact__link" href="mailto:info@windelsdecor.be"><span>info@windelsdecor.be</span></a>
+                  </div>
+                </div>
+                <div class="d-flex gap-4 align-items-center p-4">
+                  <i class="bi bi-telephone c-contact__icon"></i>
+                  <div class="d-flex flex-column gap-1">
+                    <h4 class="p-0 m-0">Telefoonnummer</h4>
+                    <a class="c-contact__link" href="tel:0470120718"><span>0470 12 07 18</span></a>
+                  </div>
+                </div>
+                <div class="d-flex gap-4 align-items-center p-4">
+                  <i class="bi bi-pin-map c-contact__icon"></i>
+                  <div class="d-flex flex-column gap-1">
+                    <h4 class="p-0 m-0">Adres</h4>
+                    <a class="c-contact__link" href="https://maps.app.goo.gl/LtRJVusqmbzFYrbe7" target="_blank"><span>Frankrijklaan&nbsp;28&comma; 8550&nbsp;Zwevegem</span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="c-contact__socials p-4">
+                <h4>Volg ons op</h4>
+                <div class="d-flex gap-4">
+                  <a class="c-contact__sociallink" href="https://www.facebook.com/Windelsdecor" target="_blank"><i class="bi bi-facebook c-contact__social"></i></a>
+                  <a class="c-contact__sociallink" href="https://www.instagram.com/windelsdecor/" target="_blank"><i class="bi bi-instagram c-contact__social"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

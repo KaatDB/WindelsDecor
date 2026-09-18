@@ -27,6 +27,58 @@
 			transition: background-color 5000s ease-in-out 0s;
 		}
 	}
+
+	&__info {
+		background-color: #fbe4c2;
+		border-radius: 0.625rem;
+	}
+
+	&__links {
+		margin: 1rem;
+	}
+
+	&__icon {
+		font-size: 1.65rem;
+	}
+
+	&__link {
+		color: black;
+		text-decoration: none;
+
+		> span {
+			display: inline;
+			padding-bottom: 0.4rem;
+			background-image: linear-gradient(to right, #000, #000);
+			background-repeat: no-repeat;
+			background-position: 0 100%;
+			background-size: 0% .125rem;
+			transition: background-size 0.5s;
+			-webkit-box-decoration-break: clone;
+			box-decoration-break: clone;
+		}
+
+		&:hover > span {
+			background-size: 100% .125rem;
+		}
+	}
+
+	&__socials {
+		border-top: 2px solid black;
+		margin: 1rem;
+	}
+
+	&__sociallink {
+		color: black;
+		transition: color 0.5s ease;
+
+		&:hover {
+			color: $accent-color;
+		}
+	}
+
+	&__social {
+		font-size: 2rem;
+	}
 }
 
 .was-validated {
@@ -36,7 +88,7 @@
 		}
 	}
 
-    .c-contact__input:focus {
-        border-bottom: 2px solid var(--bs-form-valid-border-color);
-    }
+	.c-contact__input:focus {
+		border-bottom: 2px solid var(--bs-form-valid-border-color);
+	}
 }
