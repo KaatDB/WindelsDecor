@@ -4,6 +4,11 @@
 .c-footer {
 	margin-top: 5rem;
 
+	&__logo {
+		width: 15rem;
+		height: auto;
+	}
+
 	&__link {
 		text-decoration: none;
 		color: black;
@@ -28,6 +33,10 @@
 		&:hover::after {
 			transform: scaleX(100%);
 		}
+	}
+
+	&__icon {
+		font-size: 1.5rem;
 	}
     
     &__line {

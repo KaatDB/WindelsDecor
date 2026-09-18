@@ -6,6 +6,7 @@ import './gallery.js'
 import './formvalidation.js'
 import './formsave.js'
 import './cookies.js'
+import './currentyear.js'
 
 // Import all of Bootstrap’s JS
 import * as bootstrap from 'bootstrap';
