@@ -1,0 +1,14 @@
+@use 'core' as *;
+@use 'bs-core' as *;
+
+.c-header {
+    background-image: url(hero.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__text {
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+}
