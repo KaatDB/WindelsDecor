@@ -138,14 +138,8 @@
     {
       "title": "Project Zwevegem",
       "folder": "gallery/project zwevegem",
-      "cover": "https://res.cloudinary.com/myrspl8b/image/upload/f_auto,q_auto/v1789808525/Elias_en_Elle.webp",
+      "cover": "https://res.cloudinary.com/myrspl8b/image/upload/f_auto,q_auto/v1788857151/IMG_4668.heic",
       "images": [
-        {
-          "url": "https://res.cloudinary.com/myrspl8b/image/upload/f_auto,q_auto/v1789808525/Elias_en_Elle.webp",
-          "width": 1500,
-          "height": 1500,
-          "publicId": "Elias_en_Elle"
-        },
         {
           "url": "https://res.cloudinary.com/myrspl8b/image/upload/f_auto,q_auto/v1788857151/IMG_4668.heic",
           "width": 4284,
