@@ -2,20 +2,138 @@
 @use 'bs-core' as *;
 
 .c-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1.5rem;
+	padding: 0 1rem;
+	z-index: 100;
+	position: relative;
+
+	&__navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	&__toggle {
+		position: relative;
+		z-index: 112;
+		width: 2rem;
+		height: 2rem;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		// display: flex, flex-direction, justify-content en gap mogen weg
+
+		&[aria-expanded='true'] {
+			.c-nav__bar--top {
+				top: 50%;
+				transform: translateY(-50%) rotate(45deg);
+			}
+			.c-nav__bar--mid {
+				opacity: 0;
+				transition-delay: 0s;
+			}
+			.c-nav__bar--bot {
+				top: 50%;
+				transform: translateY(-50%) rotate(-45deg);
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+
+	&__bar {
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 2rem;
+		height: 0.1rem;
+		background-color: black;
+		border-radius: 0.2rem;
+		transform-origin: center;
+		transition:
+			top 0.5s ease-in-out,
+			transform 0.5s ease-in-out,
+			opacity 0.2s ease-in-out;
+
+		&--top {
+			top: calc(50% - 0.5rem);
+			transform: translateY(-50%);
+		}
+		&--mid {
+			top: 50%;
+			transform: translateY(-50%);
+			transition-delay: 0.2s;
+		}
+		&--bot {
+			top: calc(50% + 0.5rem);
+			transform: translateY(-50%);
+		}
+	}
+
+	&__logolink {
+		position: relative;
+		z-index: 113;
+	}
 
 	&__logo {
 		width: 7.5rem;
 		height: auto;
 	}
 
+	&__linecontainer {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.1rem;
+		cursor: pointer;
+		z-index: 112;
+		order: 0;
+
+		@include media-breakpoint-up(lg) {
+			order: 1;
+		}
+	}
+
 	&__items {
 		display: flex;
 		gap: 1.5rem;
+		align-items: center;
+		margin-bottom: 0 !important;
+		padding: 0;
+
+		@include media-breakpoint-down(lg) {
+			gap: 1.75rem;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: $background-color;
+			border: black 1px solid;
+			flex-direction: column;
+			justify-content: center;
+			transform: translateY(-110%);
+			transition: transform 0.5s ease-in-out;
+			z-index: 1;
+
+			&.is-open {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__item {
 		list-style-type: none;
+		font-size: 1.125rem;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 1.5rem;
+		}
 	}
 
 	&__link {
