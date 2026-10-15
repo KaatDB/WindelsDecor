@@ -2,13 +2,25 @@
 @use 'bs-core' as *;
 
 .c-header {
-    background-image: url(hero.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background: url('hero_2.webp') center / cover no-repeat;
 
-    &__text {
-        margin-top: 10rem;
-        margin-bottom: 10rem;
+    @include media-breakpoint-down(sm) {
+        background: url(hero_2.webp) right / cover no-repeat;
     }
+
+	&__text {
+		margin-top: 5rem;
+		margin-bottom: 14rem;
+        text-align: right;
+	}
+
+	&__title {
+        color: black;
+
+        &--sub {
+            @include media-breakpoint-down(md) {
+                font-size: .875rem;
+            }
+        }
+	}
 }

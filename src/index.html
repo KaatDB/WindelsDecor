@@ -4,85 +4,46 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+  <link rel="stylesheet" href="https://use.typekit.net/epa3pem.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Windels Decor</title>
 </head>
 
 <body>
-  <header>
-    <div class="c-header">
-      <!-- <nav class="c-nav">
-        <img class="c-nav__logo" src="Logo_WindelsDecor.svg" alt="Logo Windels Decor">
-        <ul class="c-nav__items">
-          <li class="c-nav__item"><a class="c-nav__link" href="#overons">Over ons</a></li>
-          <li class="c-nav__item"><a class="c-nav__link" href="#realisaties">Realisaties</a></li>
-          <li class="c-nav__item"><a class="c-nav__link" href="#contact">Contact</a></li>
-        </ul>
-      </nav> -->
-      <!-- <nav class="navbar navbar-expand-md bg-1">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img class="c-nav__logo" src="Logo_WindelsDecor.svg" alt="Logo Windels Decor">
-          </a>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+  <header class="c-header">
+    <nav class="c-nav">
+      <div class="container-fluid c-nav__navbar">
+        <a class="c-nav__logolink" href="/">
+          <img class="c-nav__logo" src="Logo_WindelsDecor.svg" alt="Logo Windels Decor">
+        </a>
+        <div class="c-nav__linecontainer">
+          <button class="c-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Toggle navigation">
+            <span class="c-nav__bar c-nav__bar--top"></span>
+            <span class="c-nav__bar c-nav__bar--mid"></span>
+            <span class="c-nav__bar c-nav__bar--bot"></span>
           </button>
 
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item c-nav__item">
-                  <a class="nav-link c-nav__link" href="#overons">Over ons</a>
-                </li>
-                <li class="nav-item c-nav__item">
-                  <a class="nav-link c-nav__link" href="#realisaties">Realisaties</a>
-                </li>
-                <li class="nav-item c-nav__item">
-                  <a class="nav-link c-nav__link" href="#contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ul class="c-nav__items" id="nav-items">
+            <li class="c-nav__item"><a class="c-nav__link" href="#overons">Over ons</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="#realisaties">Realisaties</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="#contact">Contact</a></li>
+          </ul>
         </div>
-      </nav> -->
-      <nav class="c-nav">
-        <div class="container-fluid c-nav__navbar">
-          <a class="c-nav__logolink" href="/">
-            <img class="c-nav__logo" src="Logo_WindelsDecor.svg" alt="Logo Windels Decor">
-          </a>
-
-          <div class="c-nav__linecontainer">
-            <button class="c-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-items" aria-label="Toggle navigation">
-              <span class="c-nav__bar c-nav__bar--top"></span>
-              <span class="c-nav__bar c-nav__bar--mid"></span>
-              <span class="c-nav__bar c-nav__bar--bot"></span>
-            </button>
-
-            <ul class="c-nav__items" id="nav-items">
-              <li class="c-nav__item"><a class="c-nav__link" href="#overons">Over ons</a></li>
-              <li class="c-nav__item"><a class="c-nav__link" href="#realisaties">Realisaties</a></li>
-              <li class="c-nav__item"><a class="c-nav__link" href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="container">
-        <div class="row">
-          <div class="col d-flex flex-column align-items-end">
-            <div class="c-header__text">
-              <h1>Windels Decor</h1>
-              <p>Vakmanschap van vloer tot plafond.</p>
-              <a class="btn c-btn" href="mailto:info@windelsdecor.be">Vraag uw offerte aan</a>
-            </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex flex-column align-items-end">
+          <div class="c-header__text">
+            <h1 class="c-header__title">Windels Decor</h1>
+            <p class="c-header__title c-header__title--sub">Vakmanschap van vloer tot plafond.</p>
+            <a class="btn c-btn" href="mailto:info@windelsdecor.be">Vraag uw offerte aan</a>
           </div>
         </div>
       </div>
     </div>
+
   </header>
 
   <main>
