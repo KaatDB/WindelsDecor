@@ -5,6 +5,14 @@
 	padding: 0 1rem;
 	z-index: 100;
 	position: relative;
+	background-color: rgba(#fff0da, 0.4);
+
+	@include media-breakpoint-down(lg) {
+		transition: all 0.5s ease;
+		&:has(.c-nav__items.is-open) {
+			background-color: transparent !important;
+		}
+	}
 
 	&__navbar {
 		display: flex;
@@ -113,7 +121,7 @@
 			left: 0;
 			width: 100vw;
 			height: 100vh;
-			background-color: $background-color;
+			background-color: rgba(#fff0da, 0.9);
 			border: black 1px solid;
 			flex-direction: column;
 			justify-content: center;
