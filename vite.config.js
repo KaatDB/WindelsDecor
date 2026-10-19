@@ -7,6 +7,7 @@ export default {
 	publicDir: resolve('./public'),
 	build: {
 		outDir: '../dist',
+		emptyOutDir: true,
 	},
 	server: {
 		port: 8080,
