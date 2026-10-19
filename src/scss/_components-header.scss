@@ -2,10 +2,10 @@
 @use 'bs-core' as *;
 
 .c-header {
-	background: url('hero_2.webp') center / cover no-repeat;
+	background: url(/hero_2.webp) center / cover no-repeat;
 
     @include media-breakpoint-down(sm) {
-        background: url(hero_2.webp) right / cover no-repeat;
+        background: url(/hero_2.webp) right / cover no-repeat;
     }
 
 	&__text {
