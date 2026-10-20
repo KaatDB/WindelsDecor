@@ -2,5 +2,5 @@
 @use 'bs-core' as *;
 
 .u-hide {
-    display: none;
+	display: none !important;
 }

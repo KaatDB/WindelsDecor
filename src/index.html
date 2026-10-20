@@ -66,7 +66,7 @@
           </div>
         </div>
       </div>
-      <div class="container mt-5">
+      <div class="container pt-5 mt-5">
         <div class="row">
           <div class="col">
             <h2>Waarvoor kan je bij ons terecht&quest;</h2>
@@ -161,35 +161,40 @@
         </div>
         <div class="row">
           <div class="col-lg-7">
-            <form class="js-validate" action="https://formspree.io/f/mrperebg" method="POST">
-              <div class="form-floating c-contact__inputfield mb-4">
-                <input type="text" class="form-control c-contact__input" name="voornaam" id="voornaam" minlength="2" placeholder="Elias" required>
-                <label class="c-contact__label" for="voornaam">Voornaam</label>
-                <div class="invalid-feedback">Gelieve je voornaam in te vullen.</div>
+            <div class="c-contact__formwrapper">
+              <form class="js-validate w-100" action="https://formspree.io/f/mrperebg" method="POST">
+                <div class="form-floating c-contact__inputfield mb-4">
+                  <input type="text" class="form-control c-contact__input" name="voornaam" id="voornaam" minlength="2" placeholder="Elias" required>
+                  <label class="c-contact__label" for="voornaam">Voornaam</label>
+                  <div class="invalid-feedback">Gelieve je voornaam in te vullen.</div>
+                </div>
+                <div class="form-floating c-contact__inputfield mb-4">
+                  <input type="text" class="form-control c-contact__input" name="naam" id="naam" minlength="2" placeholder="Windels" required>
+                  <label class="c-contact__label" for="naam">Naam</label>
+                  <div class="invalid-feedback">Gelieve je naam in te vullen.</div>
+                </div>
+                <div class="form-floating c-contact__inputfield mb-4">
+                  <input type="email" class="form-control c-contact__input" name="mail" id="mail" minlength="2" placeholder="info@windelsdecor.be" required>
+                  <label class="c-contact__label" for="mail">E-mailadres</label>
+                  <div class="invalid-feedback">Gelieve een geldig e-mailadres in te vullen.</div>
+                </div>
+                <div class="form-floating c-contact__inputfield mb-4">
+                  <input type="tel" class="form-control c-contact__input" name="telefoonnummer" id="telefoonnummer" minlength="2" placeholder="0470 12 07 18" required>
+                  <label class="c-contact__label" for="telefoonnummer">Telefoonnummer</label>
+                  <div class="invalid-feedback">Gelieve een geldig telefoonnummer in te vullen.</div>
+                </div>
+                <div class="form-floating c-contact__inputfield mb-4">
+                  <textarea rows="4" class="form-control c-contact__input" name="bericht" id="bericht" placeholder="Hoe kunnen we je helpen?" required></textarea>
+                  <label class="form-label c-contact__label" for="bericht">Bericht</label>
+                  <div class="invalid-feedback">Gelieve je bericht in te vullen.</div>
+                </div>
+                <button type="submit" class="w-100 btn c-btn js-submit-btn">Verzend je bericht</button>
+              </form>
+              <div class="js-submit-animation u-hide">
+                <div class="c-contact__animation js-animation"></div>
+                <h4 class="text-center">Bedankt voor je bericht&excl;<br>We&nbsp;sturen&nbsp;je zo&nbsp;snel&nbsp;mogelijk een&nbsp;antwoord.</h4>
               </div>
-              <div class="form-floating c-contact__inputfield mb-4">
-                <input type="text" class="form-control c-contact__input" name="naam" id="naam" minlength="2" placeholder="Windels" required>
-                <label class="c-contact__label" for="naam">Naam</label>
-                <div class="invalid-feedback">Gelieve je naam in te vullen.</div>
-              </div>
-              <div class="form-floating c-contact__inputfield mb-4">
-                <input type="mail" class="form-control c-contact__input" name="mail" id="mail" minlength="2" placeholder="info@windelsdecor.be" required>
-                <label class="c-contact__label" for="mail">E-mailadres</label>
-                <div class="invalid-feedback">Gelieve een geldig e-mailadres in te vullen.</div>
-              </div>
-              <div class="form-floating c-contact__inputfield mb-4">
-                <input type="tel" class="form-control c-contact__input" name="telefoonnummer" id="telefoonnummer" minlength="2" placeholder="0470 12 07 18" required>
-                <label class="c-contact__label" for="telefoonnummer">Telefoonnummer</label>
-                <div class="invalid-feedback">Gelieve een geldig telefoonnummer in te vullen.</div>
-              </div>
-              <div class="form-floating c-contact__inputfield mb-4">
-                <textarea rows="4" class="form-control c-contact__input" name="bericht" id="bericht" placeholder="Hoe kunnen we je helpen?"></textarea>
-                <label class="form-label c-contact__label" for="bericht">Bericht</label>
-                <div class="invalid-feedback">Gelieve je bericht in te vullen.</div>
-              </div>
-              <button type="submit" class="w-100 btn c-btn js-submit-btn">Verzend je bericht</button>
-            </form>
-            <div class="js-submit-animation u-hide"></div>
+            </div>
           </div>
           <div class="col-lg-5">
             <div class="c-contact__info d-flex flex-column justify-content-evenly mt-5 mt-lg-0">

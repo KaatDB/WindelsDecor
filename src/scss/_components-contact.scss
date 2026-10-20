@@ -51,14 +51,14 @@
 			background-image: linear-gradient(to right, #000, #000);
 			background-repeat: no-repeat;
 			background-position: 0 100%;
-			background-size: 0% .125rem;
+			background-size: 0% 0.125rem;
 			transition: background-size 0.5s;
 			-webkit-box-decoration-break: clone;
 			box-decoration-break: clone;
 		}
 
 		&:hover > span {
-			background-size: 100% .125rem;
+			background-size: 100% 0.125rem;
 		}
 	}
 
@@ -78,6 +78,20 @@
 
 	&__social {
 		font-size: 2rem;
+	}
+
+	&__formwrapper {
+		display: grid;
+		place-items: center;
+	}
+
+	&__animation {
+		width: 20rem;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }
 

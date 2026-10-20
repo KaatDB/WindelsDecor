@@ -1,13 +1,19 @@
-@use "core" as *;
+@use 'core' as *;
+@use 'bs-core' as *;
 
-html, body {
-    background-color: $background-color;
+html,
+body {
+	background-color: $background-color;
 }
 
 h4 {
-    font-size: 1.125rem;
+	font-size: 1.125rem;
+
+	@include media-breakpoint-down(sm) {
+		font-size: 1rem;
+	}
 }
 
 section {
-    padding-top: 6rem;
+	padding-top: 6rem;
 }
