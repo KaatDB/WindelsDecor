@@ -4,23 +4,28 @@
 .c-header {
 	background: url(/hero_2.webp) center / cover no-repeat;
 
-    @include media-breakpoint-down(sm) {
-        background: url(/hero_2.webp) right / cover no-repeat;
-    }
+	@include media-breakpoint-down(sm) {
+		background: url(/hero_2.webp) right / cover no-repeat;
+	}
 
 	&__text {
-		margin-top: 5rem;
-		margin-bottom: 14rem;
-        text-align: right;
+		text-align: right;
+		margin-top: 8rem;
+        margin-bottom: 18rem;
+
+		@include media-breakpoint-down(xxl) {
+			margin-top: 5rem;
+			margin-bottom: 14rem;
+		}
 	}
 
 	&__title {
-        color: black;
+		color: black;
 
-        &--sub {
-            @include media-breakpoint-down(md) {
-                font-size: .875rem;
-            }
-        }
+		&--sub {
+			@include media-breakpoint-down(md) {
+				font-size: 0.875rem;
+			}
+		}
 	}
 }
