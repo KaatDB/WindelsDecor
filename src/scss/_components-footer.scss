@@ -7,6 +7,14 @@
 	&__logo {
 		width: 15rem;
 		height: auto;
+
+		@include media-breakpoint-down(md) {
+			width: 10rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 8rem;
+		}
 	}
 
 	&__link {
@@ -37,6 +45,10 @@
 
 	&__icon {
 		font-size: 1.5rem;
+
+		@include media-breakpoint-down(sm) {
+			font-size: 1rem;
+		}
 	}
     
     &__line {
